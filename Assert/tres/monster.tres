@@ -1,0 +1,72 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://cabshvts23dk3"]
+
+[ext_resource type="Texture2D" uid="uid://djxa3ege8mxxt" path="res://Assert/image/Monster05-01.png" id="1_v3ti3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aogl0"]
+atlas = ExtResource("1_v3ti3")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sss8o"]
+atlas = ExtResource("1_v3ti3")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsspl"]
+atlas = ExtResource("1_v3ti3")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_selno"]
+atlas = ExtResource("1_v3ti3")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_masf8"]
+atlas = ExtResource("1_v3ti3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cndmq"]
+atlas = ExtResource("1_v3ti3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81o78"]
+atlas = ExtResource("1_v3ti3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acte8"]
+atlas = ExtResource("1_v3ti3")
+region = Rect2(96, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aogl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sss8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsspl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_selno")
+}],
+"loop": true,
+"name": &"redguard",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_masf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cndmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81o78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acte8")
+}],
+"loop": true,
+"name": &"yellowguard",
+"speed": 5.0
+}]

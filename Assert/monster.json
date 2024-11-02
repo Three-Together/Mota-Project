@@ -1,0 +1,14 @@
+{
+	"yellowguard": {
+		"name": "初级卫兵",
+		"hp": 35,
+		"atk": 18,
+		"def": 1,
+	},
+	"redguard": {
+		"name": "高级卫兵",
+		"hp": 45,
+		"atk": 20,
+		"def": 2,
+	},
+}
