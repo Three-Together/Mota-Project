@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://co6aok5sghp6y"]
+
+[ext_resource type="SpriteFrames" uid="uid://cabshvts23dk3" path="res://Assert/tres/monster.tres" id="1_wsm0i"]
+
+[node name="monsterbookunit" type="PanelContainer"]
+offset_right = 625.0
+offset_bottom = 127.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(73, 64)
+scale = Vector2(1.78125, 1.78125)
+sprite_frames = ExtResource("1_wsm0i")
+animation = &"yellowguard"
+
+[node name="name" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 50.0
+offset_right = 218.0
+offset_bottom = 73.0
+scale = Vector2(1.61549, 1.61549)
+text = "初级卫兵"
+
+[node name="Hp" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 32.0
+offset_right = 333.0
+offset_bottom = 55.0
+text = "生命值："
+
+[node name="HpValue" type="Label" parent="Control/Hp"]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 154.0
+offset_bottom = 24.0
+text = "10000"
+
+[node name="Atk" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 32.0
+offset_right = 494.0
+offset_bottom = 55.0
+text = "攻击:"
+
+[node name="HpValue" type="Label" parent="Control/Atk"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 1.0
+offset_right = 135.0
+offset_bottom = 25.0
+text = "10000"
+
+[node name="Def" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 72.0
+offset_right = 341.0
+offset_bottom = 95.0
+text = "防御："
+
+[node name="DefValue" type="Label" parent="Control/Def"]
+layout_mode = 0
+offset_left = 48.0
+offset_right = 153.0
+offset_bottom = 23.0
+text = "10000"

@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://yqcab8rm6p28"]
+
+[ext_resource type="Script" path="res://Script/Ui.gd" id="1_q5vfp"]
+
+[node name="UI" type="Node2D"]
+position = Vector2(5, -8)
+script = ExtResource("1_q5vfp")
+
+[node name="HP" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 21.0
+offset_right = 48.0
+offset_bottom = 44.0
+text = "血量："
+metadata/_edit_use_anchors_ = true
+
+[node name="Defense" type="Label" parent="."]
+offset_left = 7.0
+offset_top = 95.0
+offset_right = 55.0
+offset_bottom = 118.0
+text = "防御："
+metadata/_edit_use_anchors_ = true
+
+[node name="Attack" type="Label" parent="."]
+offset_left = 7.0
+offset_top = 57.0
+offset_right = 55.0
+offset_bottom = 80.0
+text = "攻击：
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="HPLable" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 21.0
+offset_right = 131.0
+offset_bottom = 44.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AttackLable" type="Label" parent="."]
+offset_left = 53.0
+offset_top = 59.0
+offset_right = 131.0
+offset_bottom = 82.0
+metadata/_edit_use_anchors_ = true
+
+[node name="DefenseLable" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 95.0
+offset_right = 129.0
+offset_bottom = 118.0
+metadata/_edit_use_anchors_ = true
+
+[node name="save" type="Button" parent="."]
+offset_left = 25.0
+offset_top = 174.0
+offset_right = 100.0
+offset_bottom = 218.0
+text = "存档
+"
+
+[node name="load" type="Button" parent="."]
+offset_left = 26.0
+offset_top = 231.0
+offset_right = 101.0
+offset_bottom = 275.0
+text = "读档
+"
+
+[connection signal="pressed" from="save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="load" to="." method="_on_load_pressed"]

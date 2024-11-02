@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://c23pl5byhm45a"]
+
+[ext_resource type="Script" path="res://Script/Stairs.gd" id="1_h5vjs"]
+[ext_resource type="Texture2D" uid="uid://0d2tr1y35xf5" path="res://Assert/image/terrains.png" id="2_jrdhf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5y5o"]
+atlas = ExtResource("2_jrdhf")
+region = Rect2(0, 640, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5uys"]
+atlas = ExtResource("2_jrdhf")
+region = Rect2(0, 672, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ps4e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5y5o")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5uys")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpqqy"]
+size = Vector2(31.5, 31.5)
+
+[node name="Stairs" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_8ps4e")
+animation = &"down"
+centered = false
+script = ExtResource("1_h5vjs")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_hpqqy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
