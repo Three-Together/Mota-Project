@@ -1,0 +1,171 @@
+~ NPC1_once
+杰克: [wave amp=25 freq=5]我是一个NPC[/wave] 
+杰克: 你好
+杰克: 选择一项
+- 选项1
+	do Event.event_1()
+	杰克:看到了吧!
+- 这是选项2
+	克杰: You chose option 2
+do Event.emitdel()
+set Global.game_status = "run" #修改状态,必须要有
+=> END
+
+~ NPC_go_school
+旅行商人 : [wave amp=25 freq=5]你好，请问有什么我能帮助你的吗？[/wave] 
+- 消耗50金币增加2点攻击
+	if Global.money > 50 :
+		set Global.atk += 2
+		set Global.money -= 50
+	else :
+		旅行商人 : 年轻人，看来你的钱不够啊。
+- 消耗50金币增加2点防御
+	if Global.money > 50 :
+		set Global.def += 2
+		set Global.money -= 50
+	else :
+		旅行商人 : 年轻人，看来你的钱不够啊。
+- 消耗50金币增加2000点生命
+	if Global.money > 50 :
+		set Global.hp += 2000
+		set Global.money -= 50
+	else :
+		旅行商人 : 年轻人，看来你的钱不够啊。
+do Event.emitdel()
+set Global.game_status = "run" #修改状态,必须要有
+=> END
+
+
+
+
+~ NPC2
+NPC名字: 叽里咕噜
+NPC名字: ~?…, *☆℃︿★?
+set Global.game_status = "run"
+do Event.emitdel()
+=> END
+
+~ go_school_1
+白流雪: 前面就是斯特拉学院了啊，虽然在游戏里看过，但总归还是现实里看着更壮观。
+白流雪: 就在这处理从那些杀手身上缴获的东西吧。
+do Event.emitend()
+=> END
+
+~ base_end_1
+白流雪: 终于结束了，得救了。。。
+do Event.emitend()
+=> END
+
+~ base_end_2
+【任务1】【躲避追杀者！】完成！
+奖励金币50！
+do Event.emitend()
+=> END
+
+~ base1_1
+白流雪: 游戏中这里只能逃跑，但是那是通过鼠标和键盘操作的啊。
+白流雪: 但这不是游戏，一味逃跑是做不到的。
+白流雪: 那意味着，我必须杀掉追击者了。。。
+do Event.emitend()
+=> END
+
+~ start1_1
+白流雪: 这。。这是游戏角色的记忆？
+白流雪: 我这是来到了游戏《艾特尔世界》吗？
+白流雪: 发生了什么？
+白流雪: 我记得游戏中莫名其妙的出现了黑龙，黑夜十三月。
+白流雪: 我击败了它，然后在论坛上看发生了什么。
+白流雪: 我应该是唯一单刷了黑龙的玩家。
+白流雪: 想起来了，先前有声音说我是最接近“真结局”的玩家。
+白流雪: 现在是什么状况？
+do Event.emitend()
+=> END
+
+~ start1_2
+此时白流雪的眼前忽然有弹窗跳出。
+do Event.emitend()
+=> END
+
+~ start1_3
+【任务1】【躲避追杀者！】
+do Event.emitend()
+=> END
+
+~ start1_4
+白流雪: 哇，这不是角色白流雪的序章任务嘛？
+白流雪: 我现在应该逃跑嘛？
+do Event.emitend()
+=> END
+
+~ start1_5
+【离开小木屋后开启序章任务】
+do Event.emitend()
+=> END
+
+~ title1
+本关属于教程关，用于帮助新手了解如何更好的游玩。
+您可以采用鼠标或方向键移动，需要注意的是，人物的移动速度与帧率有关，因此方向键移动可能过快。
+按ESC键可暂停游戏并查看当前层怪物的属性。
+当触发消耗性事件后会自动为您存档，保存当前进度，您可以按Backspace回退事件。
+左上角的是旅行商人，或许您可以和他对话了解什么。
+更多细节请您亲自探索了解。
+do Event.emitend()
+=> END
+
+~ title2
+您可以使用对应颜色的钥匙打开对应颜色的门，您所拥有的钥匙数量将时刻显示在UI的左边。
+do Event.emitend()
+=> END
+
+~ title3
+左边从靠近您的地方开始是能恢复生命的血瓶，从右往左，所能恢复的生命逐步增加。
+do Event.emitend()
+=> END
+
+~ title4
+绿色的钥匙数量一开始即为1000，是降低难度的道具，您可以选择使用或不使用。
+当然，作为教程关，这里的一切都是应该拾取。
+上方的是剑盾，相比起宝石它所能增加的属性会更多。
+do Event.emitend()
+=> END
+
+~ title5
+带有骷髅头的绿门是机关门，您需要击败守护着它的怪物后才能打开。
+do Event.emitend()
+=> END
+
+~ title6
+红钥匙的配给相比黄蓝两种颜色的钥匙将会少许多，您或许可以多注重与它的获取。
+do Event.emitend()
+=> END
+
+~ title7
+当您碰撞到怪物后即会自动发生战斗，战胜怪物后会获得不定额度的金币，上方的门在打开后走入楼梯即可进入下一层。
+教程关总共有两层，请先拾取完第一层的物品再进入下一层，且请注意，教程关离开后无法再次进入。
+PS：如果有楼梯没能实现传送功能，请不用担心，离开后再次进入楼梯即可生效（是特性的说
+do Event.emitend()
+=> END
+
+~ NPC1
+旅行商人: [wave amp=25 freq=5]你好，我是一个旅行商人。[/wave] 
+旅行商人: 我或许会出现在各地，如果您到时候看见我，可以来和我交易。
+旅行商人: 我只需要那金灿灿的金币，当然，我会给您等价值的事物的，诚信经营，小本生意，呵呵，那么回见。
+#- 选项1
+#	if Global.atk < 10 : 
+#		杰克:看到了吧!
+#	else :
+#		杰克:你太强了!	
+#- 这是选项2
+#    速度
+do Event.emitdel()
+set Global.game_status = "run" #修改状态,必须要有
+=> END
+
+~ die
+你死了!
+是否读取自动存档
+- 是
+	do SceneManager.autoload()
+	set Global.game_status = "run"
+- 否
+	do SceneManager.return_title()
