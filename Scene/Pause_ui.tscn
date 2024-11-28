@@ -1,0 +1,313 @@
+[gd_scene load_steps=7 format=3 uid="uid://c51seofy1qywc"]
+
+[ext_resource type="Texture2D" uid="uid://b7ynhrhk8otvo" path="res://Assert/image/纯边框.png" id="1_f708x"]
+[ext_resource type="Script" path="res://Script/PauseUI.gd" id="1_kkbc6"]
+[ext_resource type="Texture2D" uid="uid://bm2hxgc0baiw3" path="res://Assert/image/内框.png" id="2_8s1gv"]
+[ext_resource type="Texture2D" uid="uid://cvi1510e7pra7" path="res://Assert/image.png" id="4_fqn84"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tsg10"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iij1h"]
+
+[node name="PauseUI" type="Node2D"]
+script = ExtResource("1_kkbc6")
+
+[node name="纯边框" type="Sprite2D" parent="."]
+position = Vector2(80, 240)
+scale = Vector2(0.403652, 0.405063)
+texture = ExtResource("1_f708x")
+
+[node name="纯边框2" type="Sprite2D" parent="."]
+position = Vector2(439.969, 240)
+scale = Vector2(1.41074, 0.405063)
+texture = ExtResource("1_f708x")
+
+[node name="纯边框3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(647.969, 240)
+scale = Vector2(0.362877, 0.405063)
+texture = ExtResource("1_f708x")
+
+[node name="Monster" type="Sprite2D" parent="."]
+position = Vector2(80, 55)
+scale = Vector2(0.296496, 0.494845)
+texture = ExtResource("2_8s1gv")
+
+[node name="monster" type="Button" parent="Monster"]
+offset_left = -155.145
+offset_top = -36.0
+offset_right = -50.145
+offset_bottom = 4.0
+scale = Vector2(2.991, 1.8)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "敌人"
+
+[node name="Save" type="Sprite2D" parent="."]
+position = Vector2(79, 152)
+scale = Vector2(0.296496, 0.494845)
+texture = ExtResource("2_8s1gv")
+
+[node name="save" type="Button" parent="Save"]
+offset_left = -155.145
+offset_top = -36.0
+offset_right = -50.145
+offset_bottom = 4.0
+scale = Vector2(2.991, 1.8)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "存档"
+
+[node name="Load" type="Sprite2D" parent="."]
+position = Vector2(79, 247)
+scale = Vector2(0.296496, 0.494845)
+texture = ExtResource("2_8s1gv")
+
+[node name="load" type="Button" parent="Load"]
+offset_left = -155.145
+offset_top = -36.0
+offset_right = -50.145
+offset_bottom = 4.0
+scale = Vector2(2.991, 1.8)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "读档"
+
+[node name="Exit" type="Sprite2D" parent="."]
+position = Vector2(80, 343)
+scale = Vector2(0.296496, 0.494845)
+texture = ExtResource("2_8s1gv")
+
+[node name="exit" type="Button" parent="Exit"]
+offset_left = -155.145
+offset_top = -36.375
+offset_right = -50.1455
+offset_bottom = 3.62498
+scale = Vector2(2.991, 1.8)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "退出"
+
+[node name="SaveContainer" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 15.0
+offset_top = 19.0
+offset_right = 175.0
+offset_bottom = 556.0
+scale = Vector2(0.802355, 0.802355)
+theme_override_constants/separation = 20
+
+[node name="button1" type="Button" parent="SaveContainer" groups=["SaveButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "存档1"
+
+[node name="button2" type="Button" parent="SaveContainer" groups=["SaveButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "存档2"
+
+[node name="button3" type="Button" parent="SaveContainer" groups=["SaveButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "存档3"
+
+[node name="button4" type="Button" parent="SaveContainer" groups=["SaveButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "存档4"
+
+[node name="button5" type="Button" parent="SaveContainer" groups=["SaveButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "存档5"
+
+[node name="button6" type="Button" parent="SaveContainer" groups=["SaveButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "存档6"
+
+[node name="button7" type="Button" parent="SaveContainer" groups=["SaveButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "存档7"
+
+[node name="button8" type="Button" parent="SaveContainer" groups=["SaveButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "存档8"
+
+[node name="button9" type="Button" parent="SaveContainer" groups=["SaveButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "存档9"
+
+[node name="button10" type="Button" parent="SaveContainer" groups=["SaveButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "存档10"
+
+[node name="LoadContainer" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 15.0
+offset_top = 19.0
+offset_right = 175.0
+offset_bottom = 556.0
+scale = Vector2(0.802355, 0.802355)
+theme_override_constants/separation = 20
+
+[node name="button1" type="Button" parent="LoadContainer" groups=["LoadButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "读档1"
+
+[node name="button2" type="Button" parent="LoadContainer" groups=["LoadButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "读档2"
+
+[node name="button3" type="Button" parent="LoadContainer" groups=["LoadButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "读档3"
+
+[node name="button4" type="Button" parent="LoadContainer" groups=["LoadButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "读档4"
+
+[node name="button5" type="Button" parent="LoadContainer" groups=["LoadButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "读档5"
+
+[node name="button6" type="Button" parent="LoadContainer" groups=["LoadButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "读档6"
+
+[node name="button7" type="Button" parent="LoadContainer" groups=["LoadButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "读档7"
+
+[node name="button8" type="Button" parent="LoadContainer" groups=["LoadButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "读档8"
+
+[node name="button9" type="Button" parent="LoadContainer" groups=["LoadButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "读档9"
+
+[node name="button10" type="Button" parent="LoadContainer" groups=["LoadButton"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsg10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iij1h")
+text = "读档10"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+visible = false
+offset_left = 191.0
+offset_top = 14.0
+offset_right = 998.0
+offset_bottom = 565.0
+scale = Vector2(0.800325, 0.800325)
+
+[node name="MonsterContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Save_Image" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(437, 237)
+scale = Vector2(0.827261, 0.827261)
+texture = ExtResource("4_fqn84")
+
+[connection signal="pressed" from="Save/save" to="." method="_to_save_button_preessed"]
+[connection signal="pressed" from="Load/load" to="." method="_to_load_button_preessed"]
+[connection signal="pressed" from="Exit/exit" to="." method="_on_exit_button_pressed"]
+[connection signal="mouse_entered" from="SaveContainer/button1" to="." method="_mouse_entered_button" binds= [1]]
+[connection signal="pressed" from="SaveContainer/button1" to="." method="_on_save_button_pressed" binds= [1]]
+[connection signal="mouse_entered" from="SaveContainer/button2" to="." method="_mouse_entered_button" binds= [2]]
+[connection signal="pressed" from="SaveContainer/button2" to="." method="_on_save_button_pressed" binds= [2]]
+[connection signal="mouse_entered" from="SaveContainer/button3" to="." method="_mouse_entered_button" binds= [3]]
+[connection signal="pressed" from="SaveContainer/button3" to="." method="_on_save_button_pressed" binds= [3]]
+[connection signal="mouse_entered" from="SaveContainer/button4" to="." method="_mouse_entered_button" binds= [4]]
+[connection signal="pressed" from="SaveContainer/button4" to="." method="_on_save_button_pressed" binds= [4]]
+[connection signal="mouse_entered" from="SaveContainer/button5" to="." method="_mouse_entered_button" binds= [5]]
+[connection signal="pressed" from="SaveContainer/button5" to="." method="_on_save_button_pressed" binds= [5]]
+[connection signal="mouse_entered" from="SaveContainer/button6" to="." method="_mouse_entered_button" binds= [6]]
+[connection signal="pressed" from="SaveContainer/button6" to="." method="_on_save_button_pressed" binds= [6]]
+[connection signal="mouse_entered" from="SaveContainer/button7" to="." method="_mouse_entered_button" binds= [7]]
+[connection signal="pressed" from="SaveContainer/button7" to="." method="_on_save_button_pressed" binds= [7]]
+[connection signal="mouse_entered" from="SaveContainer/button8" to="." method="_mouse_entered_button" binds= [8]]
+[connection signal="pressed" from="SaveContainer/button8" to="." method="_on_save_button_pressed" binds= [8]]
+[connection signal="mouse_entered" from="SaveContainer/button9" to="." method="_mouse_entered_button" binds= [9]]
+[connection signal="pressed" from="SaveContainer/button9" to="." method="_on_save_button_pressed" binds= [9]]
+[connection signal="mouse_entered" from="SaveContainer/button10" to="." method="_mouse_entered_button" binds= [10]]
+[connection signal="pressed" from="SaveContainer/button10" to="." method="_on_save_button_pressed" binds= [10]]
+[connection signal="mouse_entered" from="LoadContainer/button1" to="." method="_mouse_entered_button" binds= [1]]
+[connection signal="pressed" from="LoadContainer/button1" to="." method="_on_load_button_pressed" binds= [1]]
+[connection signal="mouse_entered" from="LoadContainer/button2" to="." method="_mouse_entered_button" binds= [2]]
+[connection signal="pressed" from="LoadContainer/button2" to="." method="_on_load_button_pressed" binds= [2]]
+[connection signal="mouse_entered" from="LoadContainer/button3" to="." method="_mouse_entered_button" binds= [3]]
+[connection signal="pressed" from="LoadContainer/button3" to="." method="_on_load_button_pressed" binds= [3]]
+[connection signal="mouse_entered" from="LoadContainer/button4" to="." method="_mouse_entered_button" binds= [4]]
+[connection signal="pressed" from="LoadContainer/button4" to="." method="_on_load_button_pressed" binds= [4]]
+[connection signal="mouse_entered" from="LoadContainer/button5" to="." method="_mouse_entered_button" binds= [5]]
+[connection signal="pressed" from="LoadContainer/button5" to="." method="_on_load_button_pressed" binds= [5]]
+[connection signal="mouse_entered" from="LoadContainer/button6" to="." method="_mouse_entered_button" binds= [6]]
+[connection signal="pressed" from="LoadContainer/button6" to="." method="_on_load_button_pressed" binds= [6]]
+[connection signal="mouse_entered" from="LoadContainer/button7" to="." method="_mouse_entered_button" binds= [7]]
+[connection signal="pressed" from="LoadContainer/button7" to="." method="_on_load_button_pressed" binds= [7]]
+[connection signal="mouse_entered" from="LoadContainer/button8" to="." method="_mouse_entered_button" binds= [8]]
+[connection signal="pressed" from="LoadContainer/button8" to="." method="_on_load_button_pressed" binds= [8]]
+[connection signal="mouse_entered" from="LoadContainer/button9" to="." method="_mouse_entered_button" binds= [9]]
+[connection signal="pressed" from="LoadContainer/button9" to="." method="_on_load_button_pressed" binds= [9]]
+[connection signal="mouse_entered" from="LoadContainer/button10" to="." method="_mouse_entered_button" binds= [10]]
+[connection signal="pressed" from="LoadContainer/button10" to="." method="_on_load_button_pressed" binds= [10]]

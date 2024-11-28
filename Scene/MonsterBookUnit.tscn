@@ -1,0 +1,142 @@
+[gd_scene load_steps=3 format=3 uid="uid://co6aok5sghp6y"]
+
+[ext_resource type="SpriteFrames" uid="uid://bqv8uiwx5dkrv" path="res://Assert/tres/monster.tres" id="1_wsm0i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4dsvi"]
+
+[node name="monsterbookunit" type="PanelContainer"]
+offset_right = 487.0
+offset_bottom = 71.0
+scale = Vector2(0.920815, 0.902498)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4dsvi")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(31.6671, 34.1671)
+scale = Vector2(1.78125, 1.78125)
+sprite_frames = ExtResource("1_wsm0i")
+animation = &"yellowguard"
+frame_progress = 0.904287
+
+[node name="Name" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 93.3955
+offset_right = 161.396
+offset_bottom = 24.0
+scale = Vector2(1.35417, 1.35417)
+text = "初级卫兵"
+
+[node name="Hp" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 5.0
+offset_right = 278.0
+offset_bottom = 29.0
+text = "生命："
+
+[node name="HpValue" type="Label" parent="Control/Hp"]
+layout_mode = 0
+offset_left = 44.0
+offset_right = 61.0
+offset_bottom = 24.0
+text = "5"
+
+[node name="Atk" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 321.454
+offset_top = 5.54018
+offset_right = 369.454
+offset_bottom = 28.5402
+text = "攻击："
+
+[node name="AtkValue" type="Label" parent="Control/Atk"]
+layout_mode = 0
+offset_left = 43.0
+offset_right = 56.0
+offset_bottom = 24.0
+text = "5"
+
+[node name="Def" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 40.0
+offset_right = 278.0
+offset_bottom = 63.0
+text = "防御："
+
+[node name="DefValue" type="Label" parent="Control/Def"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = -1.0
+offset_right = 60.0
+offset_bottom = 22.0
+text = "5"
+
+[node name="Damage" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 408.334
+offset_top = 22.1607
+offset_right = 456.334
+offset_bottom = 45.1607
+text = "伤害："
+
+[node name="DamageValue" type="Label" parent="Control/Damage"]
+layout_mode = 0
+offset_left = 42.7565
+offset_right = 58.7565
+offset_bottom = 23.0
+text = "5"
+
+[node name="Money" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 321.454
+offset_top = 40.5402
+offset_right = 369.454
+offset_bottom = 63.5402
+text = "金币："
+
+[node name="MoneyValue" type="Label" parent="Control/Money"]
+layout_mode = 0
+offset_left = 42.7565
+offset_right = 58.7565
+offset_bottom = 23.0
+text = "5"
+
+[node name="ability1" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 30.0
+offset_right = 145.0
+offset_bottom = 53.0
+scale = Vector2(0.928257, 0.928257)
+horizontal_alignment = 1
+
+[node name="ability2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 30.0
+offset_right = 215.0
+offset_bottom = 53.0
+scale = Vector2(0.928257, 0.928257)
+horizontal_alignment = 1
+
+[node name="ability3" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 50.0
+offset_right = 145.0
+offset_bottom = 73.0
+scale = Vector2(0.928257, 0.928257)
+horizontal_alignment = 1
+
+[node name="ability4" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 50.0
+offset_right = 215.0
+offset_bottom = 73.0
+scale = Vector2(0.928257, 0.928257)
+horizontal_alignment = 1

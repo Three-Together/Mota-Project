@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://wqlkyxp5b2sl"]
+
+[ext_resource type="Texture2D" uid="uid://bdx0thh3vxx2i" path="res://Assert/image/NPC01-01.png" id="1_oleh2"]
+[ext_resource type="Script" path="res://Script/NPC.gd" id="2_r4bgo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tda3s"]
+atlas = ExtResource("1_oleh2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q57fm"]
+atlas = ExtResource("1_oleh2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afif4"]
+atlas = ExtResource("1_oleh2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sp4is"]
+atlas = ExtResource("1_oleh2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cdii5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tda3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q57fm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afif4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sp4is")
+}],
+"loop": true,
+"name": &"NPC",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oen6q"]
+size = Vector2(31, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5uy4"]
+size = Vector2(31.5, 31.5)
+
+[node name="NPC" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_cdii5")
+animation = &"NPC"
+centered = false
+script = ExtResource("2_r4bgo")
+
+[node name="enable_broken" type="CharacterBody2D" parent="."]
+disable_mode = 2
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enable_broken"]
+visible = false
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_oen6q")
+
+[node name="Area2D" type="Area2D" parent="enable_broken"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enable_broken/Area2D"]
+visible = false
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_d5uy4")
+
+[connection signal="body_entered" from="enable_broken/Area2D" to="." method="_on_body_entered"]

@@ -1,0 +1,102 @@
+[gd_scene load_steps=13 format=3 uid="uid://88ah5mcuyjg3"]
+
+[ext_resource type="SpriteFrames" uid="uid://bqv8uiwx5dkrv" path="res://Assert/tres/monster.tres" id="1_rtui8"]
+[ext_resource type="Script" path="res://Script/Monster.gd" id="2_8nne5"]
+[ext_resource type="Texture2D" uid="uid://b3fj1wbqlwanm" path="res://Assert/image/新新动画肢解25.png" id="3_5vl20"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oen6q"]
+size = Vector2(31, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5uy4"]
+size = Vector2(31.5, 31.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_870kd"]
+atlas = ExtResource("3_5vl20")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50n6x"]
+atlas = ExtResource("3_5vl20")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7go78"]
+atlas = ExtResource("3_5vl20")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k65qd"]
+atlas = ExtResource("3_5vl20")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug2nk"]
+atlas = ExtResource("3_5vl20")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwgbc"]
+atlas = ExtResource("3_5vl20")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cn27c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_870kd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50n6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7go78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k65qd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug2nk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwgbc")
+}],
+"loop": false,
+"name": &"sword",
+"speed": 10.0
+}]
+
+[node name="Monster" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_rtui8")
+animation = &"zhuisha_04"
+centered = false
+script = ExtResource("2_8nne5")
+
+[node name="enable_broken" type="CharacterBody2D" parent="."]
+disable_mode = 2
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enable_broken"]
+visible = false
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_oen6q")
+
+[node name="Area2D" type="Area2D" parent="enable_broken"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enable_broken/Area2D"]
+visible = false
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_d5uy4")
+
+[node name="damageLabel" type="Label" parent="."]
+offset_top = 21.0
+offset_right = 65.0
+offset_bottom = 49.0
+scale = Vector2(0.494737, 0.445102)
+metadata/_edit_use_anchors_ = true
+
+[node name="die" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(16, 16)
+scale = Vector2(0.843431, 0.843431)
+sprite_frames = SubResource("SpriteFrames_cn27c")
+animation = &"sword"
+frame = 5
+frame_progress = 1.0
+
+[connection signal="body_entered" from="enable_broken/Area2D" to="." method="_on_body_entered"]
