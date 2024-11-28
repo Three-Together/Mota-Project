@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://by22blfaw2vgu"]
+[gd_scene load_steps=5 format=3 uid="uid://by22blfaw2vgu"]
 
 [ext_resource type="PackedScene" uid="uid://yqcab8rm6p28" path="res://Scene/UI.tscn" id="1_fkgro"]
 [ext_resource type="Script" path="res://Script/Main.gd" id="1_sguax"]
+[ext_resource type="AudioStream" uid="uid://boby0ilolrrwq" path="res://Assert/03. 50年の散歩.mp3" id="3_0q4ki"]
+[ext_resource type="PackedScene" uid="uid://brcugyl51p8h5" path="res://Scene/Title.tscn" id="3_lrsf6"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_sguax")
 
 [node name="UI" parent="." instance=ExtResource("1_fkgro")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("3_0q4ki")
+volume_db = -20.0
+autoplay = true
+
+[node name="Title" parent="." instance=ExtResource("3_lrsf6")]

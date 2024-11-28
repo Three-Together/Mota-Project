@@ -1,5 +1,5 @@
 extends CharacterBody2D
-const SPEED = 8
+var SPEED : int = 4 #必须大于等于4
 
 var map_node : Node2D
 var current_dir : String = "null"
@@ -8,6 +8,8 @@ var current_path : Array[Vector2i]
 var map_click_position : Vector2i
 var map_player_position : Vector2i
 var click_run_times: int = 0
+@onready var atkanim : AnimatedSprite2D = $atkability
+@onready var defanim : AnimatedSprite2D = $defability
 
 var direction : Dictionary = {
 	"right": Vector2(32.0 / SPEED,0),
@@ -21,6 +23,10 @@ var redirection : Dictionary = {
 	Vector2i(-1,0) : "left",
 	Vector2i(0,-1) : "up",
 	Vector2i(0,1) : "down",
+	Vector2i(1,1) : "up",
+	Vector2i(1,-1) : "down",
+	Vector2i(-1,1) : "up",
+	Vector2i(-1,-1) : "down",
 }
 
 var run_times : Dictionary = {
@@ -30,8 +36,18 @@ var run_times : Dictionary = {
 	"up":0,
 }
 
-
 func _process(delta: float) -> void:
+	if Global.game_status != "run" :
+		return
+	if click_run_times > 0 and Input.is_action_pressed("move") :		
+		current_path.clear()
+		run_times.right = 0
+		run_times.left = 0
+		run_times.up = 0
+		run_times.down = 0
+		self.position = snapped(self.position,Global.cell_size)
+		click_run_times = 0;
+	
 	if current_path.is_empty() == true and click_run_times == 0:
 		move_delta()
 		move(delta)
@@ -46,8 +62,12 @@ func _process(delta: float) -> void:
 			click_run_times += SPEED
 			map_player_position = current_path.front()
 			current_path.pop_front()	
+		run_times[current_dir] -= 1
+		click_run_times -= 1
 				
 func _unhandled_input(event: InputEvent) -> void:
+	if Global.game_status != "run" :
+		return
 	if event.is_action_pressed("mouse_left_click") :
 		if click_run_times > 0 :
 			current_path.clear()
@@ -58,7 +78,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			self.position = snapped(self.position,Global.cell_size)
 			click_run_times = 0;
 			
-		map_click_position = map_node.tmap.local_to_map(get_global_mouse_position() - Vector2(128,0))
+		map_click_position = map_node.tmap.local_to_map(get_global_mouse_position()) - Vector2i(5,0)
+		Global.click_effect(map_click_position + Vector2i(5,0))
 		map_player_position = map_node.tmap.local_to_map(self.position)
 		run_times.right = 0
 		run_times.left = 0
@@ -126,7 +147,7 @@ func move(delta: float) :
 		
 func play_anim(movement : bool):
 	var dir = current_dir
-	var anim = $AnimatedSprite2D;
+	var anim = $walk;
 	if dir == "right" :
 		anim.flip_h = false
 		if movement == true :
@@ -150,9 +171,11 @@ func play_anim(movement : bool):
 		if movement == true :
 			anim.play("front_walk")
 		else :
-			anim.play("front_idle")
-		
-func pickup(plus : Dictionary) -> void :
-	Global.atk += plus.atk
-	Global.def += plus.def
-	Global.hp += plus.hp	
+			anim.play("front_idle")	
+
+
+func _on_atkability_animation_finished() -> void:
+	atkanim.visible = false
+
+func _on_defability_animation_finished() -> void:
+	defanim.visible = false

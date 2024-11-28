@@ -3,14 +3,17 @@ extends Node2D
 var scene_name : String
 var player_position : Vector2
 var enable = true
-func _on_body_entered(body: Node2D) -> void:
-	if Global.stairs_enable == true && Global.loading == false:
+func _ready() -> void:
+	self.position = snapped(self.position,Global.cell_size)
+	
+func _on_body_entered(player: Node2D) -> void:
+	if player.name == "Player" and Global.stairs_enable == true:
 		Global.stairs_enable = false
 		enable = false
 		var next_floor_path = SceneManager.load_by_floor(scene_name)
-		SceneManager.load_scene(next_floor_path,player_position)
+		SceneManager.load_scene_deferred(next_floor_path,player_position)
 		
 
-func _on_body_exited(body: Node2D) -> void:
-	if enable == true && Global.loading == false:	
+func _on_body_exited(player: Node2D) -> void:
+	if player.name == "Player" and enable == true:	
 		Global.stairs_enable = true

@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://76lttvr4u8x4"]
+
+[ext_resource type="Texture2D" uid="uid://ea2m1e41gy6l" path="res://Assert/image/VX Water1.png" id="1_4xtq7"]
+[ext_resource type="Script" path="res://Script/anim_click.gd" id="2_24vv3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bef7e"]
+atlas = ExtResource("1_4xtq7")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlot3"]
+atlas = ExtResource("1_4xtq7")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x16w"]
+atlas = ExtResource("1_4xtq7")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hltnb"]
+atlas = ExtResource("1_4xtq7")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0agmo"]
+atlas = ExtResource("1_4xtq7")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b51lc"]
+atlas = ExtResource("1_4xtq7")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_es1a7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bef7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlot3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4x16w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hltnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0agmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b51lc")
+}],
+"loop": false,
+"name": &"click",
+"speed": 5.0
+}]
+
+[node name="AnimClick" type="AnimatedSprite2D"]
+scale = Vector2(0.166667, 0.166667)
+sprite_frames = SubResource("SpriteFrames_es1a7")
+animation = &"click"
+frame = 5
+frame_progress = 1.0
+speed_scale = 2.5
+centered = false
+script = ExtResource("2_24vv3")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

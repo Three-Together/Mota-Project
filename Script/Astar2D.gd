@@ -5,7 +5,8 @@ var map_rect = Rect2i()
 @onready var tmap = self
 
 func _ready() -> void:
-	var tilemap_size = tmap.get_used_rect().end - tmap.get_used_rect().position
+	#var tilemap_size = tmap.get_used_rect().end - tmap.get_used_rect().position 有大地图需要再修改优化
+	var tilemap_size = Vector2i(15,15);
 	map_rect = Rect2(Vector2i.ZERO,tilemap_size)
 	var tile_size = tmap.tile_set.tile_size
 	
